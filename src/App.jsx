@@ -4,6 +4,7 @@ import {Col, Flex, Layout, Row} from "antd";
 import {Intro} from "./components/Intro/Intro.jsx";
 import {ThemeCard} from "./components/ThemeCard/ThemeCard.jsx";
 import ThemeContext from "./contexts/ThemeContext/ThemeContext.js";
+import {AuthCard} from "./components/AuthCard/AuthCard.jsx";
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
                     <Intro/>
                     <Row gutter={['10px', '10px']}>
                         <Col span={8} ><ThemeCard/></Col>
-                        <Col span={8}><ThemeCard/></Col>
+                        <Col span={8}><AuthCard/></Col>
                         <Col span={8}><ThemeCard/></Col>
                         <Col span={16}><ThemeCard/></Col>
                         <Col span={8}><ThemeCard/></Col>

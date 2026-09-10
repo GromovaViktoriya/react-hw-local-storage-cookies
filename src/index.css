@@ -16,7 +16,7 @@
     --color-text-segment: #7988A4;
 
     /* Borders */
-    --color-border: #E4E7EC;
+    --color-border: #dbdee3;
     --color-border-light: #F0F2F5;
 
     /* Primary */
@@ -42,6 +42,19 @@
 
     --color-tag-storage-bg: #E7F2FE;
     --color-tag-storage-text: #1979FD;
+
+    /* Buttons */
+    --color-btn-primary-bg: #1979FD;
+    --color-btn-primary-text: #FFFFFF;
+    --color-btn-primary-border: #1979FD;
+
+    --color-btn-secondary-bg: var(--color-segment-bg);
+    --color-btn-secondary-text: #000000;
+    --color-btn-secondary-border: var(--color-segment-bg);
+    --color-btn-primary-hover-bg: #1060D0;
+    --color-btn-primary-hover-border: #1060D0;
+    --color-btn-secondary-hover-bg: #DFE4EA;
+    --color-btn-secondary-hover-border: #DFE4EA;
 }
 
 [data-theme="dark"] {
@@ -86,6 +99,19 @@
 
     --color-tag-storage-bg: #121E36;
     --color-tag-storage-text: #3B82F6;
+
+    /* Buttons */
+    --color-btn-primary-bg: var(--color-segment-bg-selected);
+    --color-btn-primary-text: #3B82F6;
+    --color-btn-primary-border: #3B82F6;
+
+    --color-btn-secondary-bg: var(--color-segment-bg);
+    --color-btn-secondary-text: var(--color-text);
+    --color-btn-secondary-border: var(--color-segment-bg);
+    --color-btn-primary-hover-bg: #222631;
+    --color-btn-primary-hover-border: #60A5FA;
+    --color-btn-secondary-hover-bg: #1E2330;
+    --color-btn-secondary-hover-border: #1E2330;
 }
 
 body {
@@ -97,6 +123,7 @@ body {
 }
 
 .card {
+    height: 100%;
     background: var(--color-surface);
     border: 1px solid var(--color-border);
 }
@@ -149,7 +176,7 @@ body {
     border-radius: 10px;
 }
 
-
+/* ================== SEGMENTED CONTROL ================== */
 .custom-segmented {
     border-color: #ECF1F7;
     padding: 0 !important;
@@ -169,9 +196,9 @@ body {
     align-items: center;
     justify-content: center;
 
-    border-radius: 5px !important;
-    border: 1px solid var(--color-border) !important;
-    transition: color 0.3s ease !important;
+    border-radius: 5px ;
+    border: 1px solid var(--color-border);
+    transition: color 0.3s ease ;
 }
 
 .custom-segmented .ant-segmented-item-label {
@@ -179,9 +206,9 @@ body {
     align-items: center;
     gap: 8px;
     position: relative;
-    z-index: 2 !important;
-    color: var(--color-text-segment) !important;
-    transition: color 0.1s ease !important;
+    z-index: 2;
+    color: var(--color-text-segment);
+    transition: color 0.1s ease;
 }
 
 
@@ -194,36 +221,158 @@ body {
 }
 
 .custom-segmented .ant-segmented-item-selected {
-    border: 1px solid #92BBFC !important;
-    background-color: var(--color-segment-bg-selected) !important;
+    border: 1px solid #92BBFC ;
+    background-color: var(--color-segment-bg-selected) ;
 }
 
 .custom-segmented .ant-segmented-thumb {
-    border: 1px solid #92BBFC !important;
-    border-radius: 5px !important;
-    background-color: var(--color-segment-bg-selected) !important;
+    border: 1px solid #92BBFC ;
+    border-radius: 5px ;
+    background-color: var(--color-segment-bg-selected);
     box-sizing: border-box;
-    z-index: 1 !important;
+    z-index: 1 ;
     pointer-events: none !important;
 }
 
 [data-theme="dark"] .custom-segmented .ant-segmented-item-selected,
 [data-theme="dark"] .custom-segmented .ant-segmented-thumb {
-    border-color: #3B82F6 !important;
+    border-color: #3B82F6;
 }
 
 .tag-theme {
-    color: var(--color-tag-theme-text) !important;
-    background: var(--color-tag-theme-bg) !important;
-    border-color: var(--color-tag-theme-bg) !important;
+    color: var(--color-tag-theme-text);
+    background: var(--color-tag-theme-bg) ;
+    border-color: var(--color-tag-theme-bg);
     border-radius: 4px;
 }
 
 
-
 .tag-storage {
-    color: var(--color-tag-storage-text) !important;
-    background: var(--color-tag-storage-bg) !important;
-    border-color: var(--color-tag-storage-bg) !important;
+    color: var(--color-tag-storage-text) ;
+    background: var(--color-tag-storage-bg) ;
+    border-color: var(--color-tag-storage-bg) ;
     border-radius: 4px;
+}
+
+/* ================== BUTTONS ================== */
+.btn-primary {
+    background-color: var(--color-btn-primary-bg) ;
+    color: var(--color-btn-primary-text) ;
+    border: 1px solid var(--color-btn-primary-border);
+    transition: all 0.3s ease ;
+    box-shadow: none;
+}
+
+
+.btn-primary:hover {
+    background-color: var(--color-btn-primary-hover-bg) !important;
+    border-color: var(--color-btn-primary-hover-border) !important;
+    color: var(--color-btn-primary-text) !important;
+    opacity: 1;
+}
+
+
+.btn-secondary {
+    background-color: var(--color-btn-secondary-bg) ;
+    color: var(--color-btn-secondary-text) ;
+    border: 1px solid var(--color-border);
+    box-shadow: none !important;
+    transition: all 0.3s ease;
+}
+
+
+.btn-secondary:hover {
+    background-color: var(--color-btn-secondary-hover-bg) !important;
+    border-color: var(--color-btn-secondary-hover-border) !important;
+    color: var(--color-btn-secondary-text) !important;
+    opacity: 1 !important;
+}
+
+
+.form-btn {
+    padding: 7px 26px;
+    height: auto ;
+    border-radius: 6px;
+}
+
+/* ================== INPUTS ================== */
+.custom-input,
+.custom-input.ant-input-affix-wrapper {
+    background-color: var(--color-bg) ;
+    border: 1px solid var(--color-border) ;
+    color: var(--color-text) ;
+    box-shadow: none ;
+    transition: all 0.3s ease;
+}
+
+
+.custom-input.ant-input-affix-wrapper > input.ant-input {
+    background-color: transparent ;
+    color: var(--color-text) ;
+}
+
+
+.custom-input:hover,
+.custom-input.ant-input-affix-wrapper:hover {
+    border-color: var(--color-primary);
+}
+
+
+.custom-input:focus,
+.custom-input-focused,
+.custom-input.ant-input-affix-wrapper-focused {
+    border-color: var(--color-primary) ;
+}
+
+.custom-input::placeholder,
+.custom-input .ant-input::placeholder {
+    color: var(--color-text-muted) ;
+}
+
+
+.custom-input .ant-input-suffix .anticon,
+.custom-input .ant-input-clear-icon {
+    color: var(--color-text-secondary);
+}
+
+
+.custom-input .ant-input-suffix .anticon:hover,
+.custom-input .ant-input-clear-icon:hover {
+    color: var(--color-primary) ;
+}
+
+.custom-input.ant-input-status-error,
+.custom-input.ant-input-affix-wrapper-status-error,
+.custom-input.ant-input-affix-wrapper-status-error:not(.ant-input-affix-wrapper-disabled):hover {
+    background-color: var(--color-bg) !important;
+    border-color: var(--color-error) !important;
+}
+
+
+.custom-input.ant-input-affix-wrapper-status-error > input.ant-input {
+    background-color: transparent !important;
+}
+
+.custom-input.ant-input-status-error:focus,
+.custom-input.ant-input-affix-wrapper-status-error:focus,
+.custom-input.ant-input-affix-wrapper-status-error-focused {
+    border-color: var(--color-error) !important;
+    box-shadow: none !important;
+}
+
+.ant-form-item .ant-form-item-explain-error {
+    font-size: 10px !important;
+}
+
+.result-input{
+    padding-left: 0;
+    font-size: 12px;
+    width: 212px;
+    border:none !important;
+    background-color: var(--color-btn-secondary-bg) !important;
+}
+
+.current-token{
+    padding: 10px;
+    background-color: var(--color-btn-secondary-bg)
 }
