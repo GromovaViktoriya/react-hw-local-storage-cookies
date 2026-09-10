@@ -6,10 +6,14 @@
     --color-surface: #FFFFFF;
     --color-surface-hover: #F8FAFC;
 
+    --color-segment-bg: #ecf0f4;
+    --color-segment-bg-selected: #FFFFFF;
+
     /* Text */
     --color-text: #1F2937;
     --color-text-secondary: #667085;
     --color-text-muted: #98A2B3;
+    --color-text-segment: #7988A4;
 
     /* Borders */
     --color-border: #E4E7EC;
@@ -32,6 +36,12 @@
 
     /* Special */
     --color-dark: #111827;
+
+    --color-tag-theme-bg: #E8F0FC;
+    --color-tag-theme-text: #7988A4;
+
+    --color-tag-storage-bg: #E7F2FE;
+    --color-tag-storage-text: #1979FD;
 }
 
 [data-theme="dark"] {
@@ -41,10 +51,14 @@
     --color-surface: #191C24;
     --color-surface-hover: #20242E;
 
+    --color-segment-bg: #12161F;
+    --color-segment-bg-selected: #1A1D24;
+
     /* Text */
     --color-text: #F2F4F7;
     --color-text-secondary: #98A2B3;
     --color-text-muted: #667085;
+    --color-text-segment: #1979FD;
 
     /* Borders */
     --color-border: #2A2F3A;
@@ -66,11 +80,20 @@
     --color-error-light: #3B1110;
 
     --color-dark: #FFFFFF;
+
+    --color-tag-theme-bg: #1A1D24;
+    --color-tag-theme-text: #7988A4;
+
+    --color-tag-storage-bg: #121E36;
+    --color-tag-storage-text: #3B82F6;
 }
 
 body {
+    box-sizing: border-box;
     background: var(--color-body);
     color: var(--color-text);
+    padding: 16px;
+    margin: 0;
 }
 
 .card {
@@ -87,9 +110,10 @@ body {
     background: var(--color-primary-hover);
 }
 
-.primary-text{
+.primary-text {
     color: var(--color-text);
 }
+
 .secondary-text {
     color: var(--color-text-secondary);
 }
@@ -98,6 +122,11 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     background-color: var(--color-body);
+    border: 1px solid var(--color-border);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .ant-layout-header.header {
@@ -106,11 +135,95 @@ body {
     align-items: center;
     background: var(--color-bg);
     padding: 0 24px;
-    border-top-right-radius: 16px;
-    border-top-left-radius: 16px;
-
+    border-bottom: 1px solid var(--color-border);
+    box-sizing: border-box;
 }
+
 .header-title {
     font-weight: bold;
     font-size: 18px;
+}
+
+.card {
+    background: var(--color-bg);
+    border-radius: 10px;
+}
+
+
+.custom-segmented {
+    border-color: #ECF1F7;
+    padding: 0 !important;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.custom-segmented .ant-segmented-group,
+.custom-segmented .ant-segmented-item {
+    z-index: auto !important;
+    transform: none !important;
+}
+
+.custom-segmented .ant-segmented-item {
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px !important;
+    border: 1px solid var(--color-border) !important;
+    transition: color 0.3s ease !important;
+}
+
+.custom-segmented .ant-segmented-item-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    z-index: 2 !important;
+    color: var(--color-text-segment) !important;
+    transition: color 0.1s ease !important;
+}
+
+
+.custom-segmented .ant-segmented-item:hover .ant-segmented-item-label,
+.custom-segmented .ant-segmented-item:active .ant-segmented-item-label,
+.custom-segmented .ant-segmented-item:focus-within .ant-segmented-item-label,
+.custom-segmented .ant-segmented-item:has(input:checked) .ant-segmented-item-label,
+.custom-segmented .ant-segmented-item-selected .ant-segmented-item-label {
+    color: #1979FD !important;
+}
+
+.custom-segmented .ant-segmented-item-selected {
+    border: 1px solid #92BBFC !important;
+    background-color: var(--color-segment-bg-selected) !important;
+}
+
+.custom-segmented .ant-segmented-thumb {
+    border: 1px solid #92BBFC !important;
+    border-radius: 5px !important;
+    background-color: var(--color-segment-bg-selected) !important;
+    box-sizing: border-box;
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
+
+[data-theme="dark"] .custom-segmented .ant-segmented-item-selected,
+[data-theme="dark"] .custom-segmented .ant-segmented-thumb {
+    border-color: #3B82F6 !important;
+}
+
+.tag-theme {
+    color: var(--color-tag-theme-text) !important;
+    background: var(--color-tag-theme-bg) !important;
+    border-color: var(--color-tag-theme-bg) !important;
+    border-radius: 4px;
+}
+
+
+
+.tag-storage {
+    color: var(--color-tag-storage-text) !important;
+    background: var(--color-tag-storage-bg) !important;
+    border-color: var(--color-tag-storage-bg) !important;
+    border-radius: 4px;
 }

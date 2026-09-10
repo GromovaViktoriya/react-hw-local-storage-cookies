@@ -1,10 +1,12 @@
 import {CodeSandboxOutlined, MoonOutlined, SunOutlined} from "@ant-design/icons"
 import {Flex, Switch, Typography, Layout} from "antd";
+import {useContext} from "react";
+import ThemeContext from "../../contexts/ThemeContext/ThemeContext.js";
 
 const {Header} = Layout
 
-export const HeaderPage = ({theme, setTheme}) => {
-
+export const HeaderPage = () => {
+    const {theme, setTheme} = useContext(ThemeContext);
 
     const handleThemeChange = () => {
         theme === "dark" ? setTheme("light") : setTheme("dark");
