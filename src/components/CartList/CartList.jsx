@@ -28,7 +28,10 @@ export const CartList = () => {
 
             {productCart.length === 0 &&
                 <Flex justify="center" align="center" style={{flex: 1}}>
-                    <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={"Добавьте товары в корзину."}/>
+                    <Empty image={Empty.PRESENTED_IMAGE_SIMPLE}
+                           description={"Добавьте товары в корзину."}
+                           styles={{ description: { color: 'var(--color-text-secondary)'}}}
+                    />
                 </Flex>}
 
             {productCart.length > 0 &&
