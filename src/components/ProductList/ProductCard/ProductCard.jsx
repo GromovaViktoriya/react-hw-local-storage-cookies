@@ -1,7 +1,8 @@
-import {Card, Flex, Image, Typography} from "antd";
+import {Card, Flex, Image} from "antd";
 import {CustomButton} from "../../common/CustomButton/CustomButton.jsx";
 import {useContext} from "react";
 import CartContext from "../../../contexts/CartContext/CartContext.jsx";
+import {ProductDescription} from "../../common/ProductDescription/ProductDescription.jsx";
 
 
 export const ProductCard = ({product}) => {
@@ -17,22 +18,15 @@ export const ProductCard = ({product}) => {
 
     return (
         <Card className="card" styles={{body: {padding: '16px'}}}>
-            <Flex vertical={true} justify="center" gap={'12px'} align={'center'}>
-                <Flex justify={'center'} align={'center'} style={{width: 100, height: 100}}>
+            <Flex vertical={true} justify="center" gap={'6px'} align={'center'}>
+                <Flex justify={'center'} align={'center'} style={{width: 100, height: 100}}
+                      className="card-img-wrapper">
                     <Image
                         alt={product.name}
                         src={product.image}
-                        width={50}
                     />
                 </Flex>
-                <Typography.Text className='primary-text'
-                                 style={{fontSize: 12, maxWidth: 280, alignSelf: 'center', fontWeight: 'bold'}}>
-                    {product.name}
-                </Typography.Text>
-                <Typography.Text className='secondary-text'
-                                 style={{fontSize: 16, maxWidth: 280, alignSelf: 'center', fontWeight: 'bold'}}>
-                    {`${product.price} тг`}
-                </Typography.Text>
+                <ProductDescription product={product}/>
                 <CustomButton
                     className={'btn-primary'}
                     title={'Добавить'}

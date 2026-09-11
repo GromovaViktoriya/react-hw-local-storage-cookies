@@ -32,7 +32,8 @@
     --color-warning-light: #FFFAEB;
 
     --color-error: #F04438;
-    --color-error-light: #FEF3F2;
+    --color-error-light: #FEE5EA;
+    --color-error-light-hover: #FAD1D8;
 
     /* Special */
     --color-dark: #111827;
@@ -91,6 +92,7 @@
 
     --color-error: #F97066;
     --color-error-light: #3B1110;
+    --color-error-light-hover: #541C27;
 
     --color-dark: #FFFFFF;
 
@@ -124,7 +126,8 @@ body {
 
 .card {
     height: 100%;
-    background: var(--color-surface);
+    background: var(--color-bg);
+    border-radius: 10px;
     border: 1px solid var(--color-border);
 }
 
@@ -171,10 +174,10 @@ body {
     font-size: 18px;
 }
 
-.card {
-    background: var(--color-bg);
-    border-radius: 10px;
+.ant-card-body {
+    height: 100%;
 }
+
 
 /* ================== SEGMENTED CONTROL ================== */
 .custom-segmented {
@@ -196,9 +199,9 @@ body {
     align-items: center;
     justify-content: center;
 
-    border-radius: 5px ;
+    border-radius: 5px;
     border: 1px solid var(--color-border);
-    transition: color 0.3s ease ;
+    transition: color 0.3s ease;
 }
 
 .custom-segmented .ant-segmented-item-label {
@@ -221,16 +224,16 @@ body {
 }
 
 .custom-segmented .ant-segmented-item-selected {
-    border: 1px solid #92BBFC ;
-    background-color: var(--color-segment-bg-selected) ;
+    border: 1px solid #92BBFC;
+    background-color: var(--color-segment-bg-selected);
 }
 
 .custom-segmented .ant-segmented-thumb {
-    border: 1px solid #92BBFC ;
-    border-radius: 5px ;
+    border: 1px solid #92BBFC;
+    border-radius: 5px;
     background-color: var(--color-segment-bg-selected);
     box-sizing: border-box;
-    z-index: 1 ;
+    z-index: 1;
     pointer-events: none !important;
 }
 
@@ -241,25 +244,25 @@ body {
 
 .tag-theme {
     color: var(--color-tag-theme-text);
-    background: var(--color-tag-theme-bg) ;
+    background: var(--color-tag-theme-bg);
     border-color: var(--color-tag-theme-bg);
     border-radius: 4px;
 }
 
 
 .tag-storage {
-    color: var(--color-tag-storage-text) ;
-    background: var(--color-tag-storage-bg) ;
-    border-color: var(--color-tag-storage-bg) ;
+    color: var(--color-tag-storage-text);
+    background: var(--color-tag-storage-bg);
+    border-color: var(--color-tag-storage-bg);
     border-radius: 4px;
 }
 
 /* ================== BUTTONS ================== */
 .btn-primary {
-    background-color: var(--color-btn-primary-bg) ;
-    color: var(--color-btn-primary-text) ;
+    background-color: var(--color-btn-primary-bg);
+    color: var(--color-btn-primary-text);
     border: 1px solid var(--color-btn-primary-border);
-    transition: all 0.3s ease ;
+    transition: all 0.3s ease;
     box-shadow: none;
 }
 
@@ -273,8 +276,8 @@ body {
 
 
 .btn-secondary {
-    background-color: var(--color-btn-secondary-bg) ;
-    color: var(--color-btn-secondary-text) ;
+    background-color: var(--color-btn-secondary-bg);
+    color: var(--color-btn-secondary-text);
     border: 1px solid var(--color-border);
     box-shadow: none !important;
     transition: all 0.3s ease;
@@ -291,24 +294,24 @@ body {
 
 .form-btn {
     padding: 7px 26px;
-    height: auto ;
+    height: auto;
     border-radius: 6px;
 }
 
 /* ================== INPUTS ================== */
 .custom-input,
 .custom-input.ant-input-affix-wrapper {
-    background-color: var(--color-bg) ;
-    border: 1px solid var(--color-border) ;
-    color: var(--color-text) ;
-    box-shadow: none ;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    box-shadow: none;
     transition: all 0.3s ease;
 }
 
 
 .custom-input.ant-input-affix-wrapper > input.ant-input {
-    background-color: transparent ;
-    color: var(--color-text) ;
+    background-color: transparent;
+    color: var(--color-text);
 }
 
 
@@ -321,12 +324,12 @@ body {
 .custom-input:focus,
 .custom-input-focused,
 .custom-input.ant-input-affix-wrapper-focused {
-    border-color: var(--color-primary) ;
+    border-color: var(--color-primary);
 }
 
 .custom-input::placeholder,
 .custom-input .ant-input::placeholder {
-    color: var(--color-text-muted) ;
+    color: var(--color-text-muted);
 }
 
 
@@ -338,7 +341,7 @@ body {
 
 .custom-input .ant-input-suffix .anticon:hover,
 .custom-input .ant-input-clear-icon:hover {
-    color: var(--color-primary) ;
+    color: var(--color-primary);
 }
 
 .custom-input.ant-input-status-error,
@@ -364,15 +367,107 @@ body {
     font-size: 10px !important;
 }
 
-.result-input{
+.result-input {
     padding-left: 0;
     font-size: 12px;
     width: 212px;
-    border:none !important;
+    border: none !important;
     background-color: var(--color-btn-secondary-bg) !important;
 }
 
-.current-token{
+.current-token {
     padding: 10px;
     background-color: var(--color-btn-secondary-bg)
 }
+
+.cart-item-img-wrapper {
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-tag-theme-bg);
+}
+
+.cart-item-img-wrapper .ant-image,
+.cart-item-img-wrapper .ant-image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.cart-item {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+}
+
+.cart-btn {
+    background: transparent;
+    border: 1px solid var(--color-error) !important;
+    color: var(--color-error) !important;
+}
+
+.cart-btn:hover {
+    background-color: var(--color-error-light) !important;
+}
+
+.input-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+    padding: 4px;
+    border-radius: 6px;
+
+    font-weight: bold;
+    font-size: 12px;
+    color: var(--color-text);
+
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    transition: all 0.2s ease;
+}
+
+.input-btn-click{
+    cursor: pointer;
+}
+
+.input-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+}
+
+
+.input-btn-click:active {
+    transform: scale(0.92);
+    background: var(--color-primary) !important;
+    color: #fff !important;
+}
+
+.bucket-btn {
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    color: var(--color-error) !important;
+    background: var(--color-error-light);
+    border-radius: 50%;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.bucket-btn:active {
+    transform: scale(0.92);
+}
+
+.bucket-btn:hover {
+    background: var(--color-error-light-hover) !important;
+    border: none !important;
+}
+

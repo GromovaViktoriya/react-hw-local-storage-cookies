@@ -10,12 +10,14 @@ export const ProductList = () => {
     return (
         <Card className="card" styles={{body: {padding: '16px'}}}>
             <Flex vertical={true} gap={'12px'}>
-                <CardDescription title={'Товары'}
-                                 alignSelf={'start'}
-                                 maxWidth={'100%'}
-                                 icon={<DropboxOutlined style={{fontSize: '20px', color: '#1979FD'}}/>}
-                                 descriptiom={`Добавляйте товары в корзину. Они сохраняются в sessionStorage.`}
-                />
+                <Flex vertical={true} justify="center" gap={'12px'}>
+                    <CardDescription title={'Товары'}
+                                     alignSelf={'start'}
+                                     maxWidth={'100%'}
+                                     icon={<DropboxOutlined style={{fontSize: '20px', color: '#1979FD'}}/>}
+                                     descriptiom={`Добавляйте товары в корзину. Они сохраняются в sessionStorage.`}
+                    />
+                </Flex>
                 <Row gutter={['10px', '10px']}>
                     {products.map(product => {
                         return <Col span={6}>

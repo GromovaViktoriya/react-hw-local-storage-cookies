@@ -7,6 +7,7 @@ import ThemeContext from "./contexts/ThemeContext/ThemeContext.js";
 import {AuthCard} from "./components/AuthCard/AuthCard.jsx";
 import {ProductList} from "./components/ProductList/ProductList.jsx";
 import CartContext from "./contexts/CartContext/CartContext.jsx";
+import {CartList} from "./components/CartList/CartList.jsx";
 
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
                         <Row gutter={['10px', '10px']}>
                             <Col span={8}><ThemeCard/></Col>
                             <Col span={8}><AuthCard/></Col>
-                            <Col span={8}><ThemeCard/></Col>
+                            <Col span={8}><CartList/></Col>
                             <Col span={16}><ProductList/></Col>
                             <Col span={8}><ThemeCard/></Col>
                         </Row>
