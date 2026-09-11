@@ -1,4 +1,4 @@
-import {Card, Flex, Image, Typography} from "antd";
+import {Card, Flex, Image, Popconfirm, Typography} from "antd";
 import {ProductDescription} from "../../common/ProductDescription/ProductDescription.jsx";
 import {CustomButton} from "../../common/CustomButton/CustomButton.jsx";
 import {DeleteOutlined} from "@ant-design/icons";
@@ -32,7 +32,17 @@ export const CartItem = ({item, setProductCart}) => {
                         <Typography.Text className='input-btn'>{item.count}</Typography.Text>
                         <CustomButton className='input-btn input-btn-click' title='+' onClick={addValueHandler}/>
                     </Flex>
-                    <CustomButton className='bucket-btn' title={<DeleteOutlined/>} onClick={removeItemHandler}/>
+                    <Popconfirm
+                        title="Удалить товар"
+                        description="Вы уверены, что хотите удалить товар?"
+                        onConfirm={removeItemHandler}
+                        okText="Да"
+                        cancelText="Нет"
+                    >
+                        <span>
+                            <CustomButton className='bucket-btn' title={<DeleteOutlined/>}/>
+                        </span>
+                    </Popconfirm>
                 </Flex>
             </Flex>
         </Card>

@@ -1,6 +1,6 @@
 import {useContext} from "react";
 import CartContext from "../../contexts/CartContext/CartContext.jsx";
-import {Card, Empty, Flex, Typography} from "antd";
+import {Card, Empty, Flex, Popconfirm, Typography} from "antd";
 import {DeleteOutlined} from "@ant-design/icons";
 import {CartItem} from "./CartItem/CartItem.jsx";
 import {CustomButton} from "../common/CustomButton/CustomButton.jsx";
@@ -50,12 +50,21 @@ export const CartList = () => {
                             {`${sum} тг`}
                         </Typography.Text>
                     </Flex>
+                    <Popconfirm
+                        title="Очистить корзину"
+                        description="Вы уверены, что хотите очистить корзину?"
+                        onConfirm={clearCartHandler}
+                        okText="Да"
+                        cancelText="Нет"
+                    >
+                        <span>
                     <CustomButton
                         title={<Flex gap={'10px'}><DeleteOutlined/> Очистить корзину</Flex>}
                         className='cart-btn'
-                        onClick={clearCartHandler}
                         block={true}
                     />
+                        </span>
+                        </Popconfirm>
                 </>
             }
         </Card>
