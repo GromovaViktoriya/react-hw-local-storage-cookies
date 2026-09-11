@@ -438,12 +438,11 @@ body {
     cursor: pointer;
 }
 
-.input-btn:hover {
+.input-btn-click:hover{
+    background: var(--color-primary-light)!important;
     border-color: var(--color-primary);
     color: var(--color-primary);
-    background: var(--color-primary-light);
 }
-
 
 .input-btn-click:active {
     transform: scale(0.92);
@@ -469,4 +468,10 @@ body {
 .bucket-btn:hover {
     background: var(--color-error-light-hover) !important;
     border: none !important;
+}
+
+.resultName{
+    background: var(--color-tag-theme-bg);
+    border-radius: 6px;
+    padding: 0 10px
 }
