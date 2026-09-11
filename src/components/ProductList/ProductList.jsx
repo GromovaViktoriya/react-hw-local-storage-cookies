@@ -1,7 +1,29 @@
-export const ProductList = ()=>{
-    return(
-        <div>
+import {Card, Col, Flex, Row} from "antd";
+import {CardDescription} from "../common/CardDescription/CardDescription.jsx";
+import {DropboxOutlined} from "@ant-design/icons";
+import {products} from "../../data/products.js";
+import {ProductCard} from "./ProductCard/ProductCard.jsx";
 
-        </div>
+export const ProductList = () => {
+
+
+    return (
+        <Card className="card" styles={{body: {padding: '16px'}}}>
+            <Flex vertical={true} gap={'12px'}>
+                <CardDescription title={'Товары'}
+                                 alignSelf={'start'}
+                                 maxWidth={'100%'}
+                                 icon={<DropboxOutlined style={{fontSize: '20px', color: '#1979FD'}}/>}
+                                 descriptiom={`Добавляйте товары в корзину. Они сохраняются в sessionStorage.`}
+                />
+                <Row gutter={['10px', '10px']}>
+                    {products.map(product => {
+                        return <Col span={6}>
+                            <ProductCard product={product}/>
+                        </Col>
+                    })}
+                </Row>
+            </Flex>
+        </Card>
     )
 }

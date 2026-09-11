@@ -5,10 +5,17 @@ import {Intro} from "./components/Intro/Intro.jsx";
 import {ThemeCard} from "./components/ThemeCard/ThemeCard.jsx";
 import ThemeContext from "./contexts/ThemeContext/ThemeContext.js";
 import {AuthCard} from "./components/AuthCard/AuthCard.jsx";
+import {ProductList} from "./components/ProductList/ProductList.jsx";
+import CartContext from "./contexts/CartContext/CartContext.jsx";
 
 
 function App() {
     const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+    const [productCart, setProductCart] = useState(JSON.parse(sessionStorage.getItem("cart")) || [])
+
+    useEffect(() => {
+        sessionStorage.setItem("cart", JSON.stringify(productCart));
+    }, [productCart])
 
     useEffect(() => {
         localStorage.setItem("theme", theme);
@@ -17,19 +24,21 @@ function App() {
 
     return (
         <ThemeContext.Provider value={{theme, setTheme}}>
-            <Layout className="App">
-                <HeaderPage/>
-                <Flex vertical={true} gap={'25px'} style={{padding:'20px 16px'}}>
-                    <Intro/>
-                    <Row gutter={['10px', '10px']}>
-                        <Col span={8} ><ThemeCard/></Col>
-                        <Col span={8}><AuthCard/></Col>
-                        <Col span={8}><ThemeCard/></Col>
-                        <Col span={16}><ThemeCard/></Col>
-                        <Col span={8}><ThemeCard/></Col>
-                    </Row>
-                </Flex>
-            </Layout>
+            <CartContext.Provider value={{productCart, setProductCart}}>
+                <Layout className="App">
+                    <HeaderPage/>
+                    <Flex vertical={true} gap={'25px'} style={{padding: '20px 16px'}}>
+                        <Intro/>
+                        <Row gutter={['10px', '10px']}>
+                            <Col span={8}><ThemeCard/></Col>
+                            <Col span={8}><AuthCard/></Col>
+                            <Col span={8}><ThemeCard/></Col>
+                            <Col span={16}><ProductList/></Col>
+                            <Col span={8}><ThemeCard/></Col>
+                        </Row>
+                    </Flex>
+                </Layout>
+            </CartContext.Provider>
         </ThemeContext.Provider>
     )
 }
