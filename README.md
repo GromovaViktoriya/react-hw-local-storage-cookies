@@ -1,5 +1,5 @@
 # Д/з localStorage, sessionStorage и cookie.
-* Ссылка на прод:
+* Ссылка на прод: https://gromovaviktoriya.github.io/react-hw-local-storage-cookies/
 
 # 1. В чем разница между localStorage, sessionStorage и cookie?
 * localStorage: Постоянное хранилище на уровне домена. Данные живут бессрочно, пока пользователь или скрипт их не удалит. Общие для всех вкладок одного сайта (до 5–10 МБ).
