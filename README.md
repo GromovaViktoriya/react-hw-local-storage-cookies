@@ -53,3 +53,8 @@ UTM-метки, аналитика и технические маркеры тр
 # Пример содержимого файла .env
 VITE_API_BASE_URL=[https://api.example.com](https://api.example.com)
 VITE_SECRET_TOKEN=your_secure_token_here
+```
+### Пример использования в коде
+```
+const apiUrl = import.meta.env.VITE_API_BASE_URL
+```
