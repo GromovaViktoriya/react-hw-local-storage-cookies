@@ -10,6 +10,8 @@ import CartContext from "./contexts/CartContext/CartContext.jsx";
 import {CartList} from "./components/CartList/CartList.jsx";
 import {StorageInspector} from "./components/StorageInspector/StorageInspector.jsx";
 import TokenContext from "./contexts/TokenContext/TokenContext.js";
+import {Footer} from "./components/Footer/Footer.jsx";
+
 
 
 function App() {
@@ -47,7 +49,7 @@ function App() {
                     <HeaderPage/>
                     <Flex vertical={true} gap={'25px'} style={{padding: '20px 16px'}}>
                         <Intro/>
-                        <TokenContext.Provider value={{token,onLoginHandler, onLogoutHandler}}>
+                        <TokenContext.Provider value={{token, onLoginHandler, onLogoutHandler}}>
                             <Row gutter={['10px', '10px']}>
                                 <Col span={8}><ThemeCard/></Col>
                                 <Col span={8}><AuthCard/></Col>
@@ -57,7 +59,7 @@ function App() {
                             </Row>
                         </TokenContext.Provider>
                     </Flex>
-
+                    <Footer/>
                 </Layout>
             </CartContext.Provider>
         </ThemeContext.Provider>
