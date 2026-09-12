@@ -20,7 +20,7 @@ export const ProductList = () => {
                 </Flex>
                 <Row gutter={['10px', '10px']}>
                     {products.map(product => {
-                        return <Col span={6}>
+                        return <Col xs={24} sm={12} md={8} lg={6} key={product.id}>
                             <ProductCard product={product}/>
                         </Col>
                     })}

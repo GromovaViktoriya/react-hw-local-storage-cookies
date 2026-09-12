@@ -498,3 +498,28 @@ body {
     display: flex;
     align-items: center;
 }
+
+@media (max-width: 576px) {
+    body {
+        padding: 8px;
+    }
+
+    .ant-layout-header.header {
+        padding: 0 12px;
+    }
+
+    .footer {
+        gap: 12px;
+        padding: 16px;
+        text-align: center;
+    }
+
+    .github-link {
+        position: static;
+    }
+
+    .footer .secondary-text {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+}

@@ -51,11 +51,11 @@ function App() {
                         <Intro/>
                         <TokenContext.Provider value={{token, onLoginHandler, onLogoutHandler}}>
                             <Row gutter={['10px', '10px']}>
-                                <Col span={8}><ThemeCard/></Col>
-                                <Col span={8}><AuthCard/></Col>
-                                <Col span={8}><CartList/></Col>
-                                <Col span={16}><ProductList/></Col>
-                                <Col span={8}><StorageInspector/></Col>
+                                <Col xs={24} md={12} lg={8}><ThemeCard/></Col>
+                                <Col xs={24} md={12} lg={8}><AuthCard/></Col>
+                                <Col xs={24} md={12} lg={8}><CartList/></Col>
+                                <Col xs={24} lg={16}><ProductList/></Col>
+                                <Col xs={24} lg={8}><StorageInspector/></Col>
                             </Row>
                         </TokenContext.Provider>
                     </Flex>
